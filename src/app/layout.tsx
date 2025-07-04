@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Geist, Geist_Mono, Lato } from 'next/font/google';
 
 import './globals.css';
 import type { Metadata } from 'next';
@@ -8,6 +8,12 @@ import ReactQueryClientProvider from '@/providers/ReactQueryClientProvider';
 const geistSans = Geist({
   variable: '--font-geist-sans',
   subsets: ['latin'],
+});
+
+const lata = Lato({
+  variable: '--font-lata',
+  subsets: ['latin'],
+  weight: ['400', '700'],
 });
 
 const geistMono = Geist_Mono({
@@ -28,7 +34,7 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${lata.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <ReactQueryClientProvider>{children}</ReactQueryClientProvider>
       </body>

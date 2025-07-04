@@ -1,0 +1,137 @@
+{
+  "name": "LIK WAI NG (Nick)",
+  "title": "Front-End Engineer",
+  "contact": {
+    "email": "likwai0430@gmail.com",
+    "phone": "+44 7784 896 298",
+    "github": "github.com/nglikwai",
+    "website": "nglikwai.com"
+  },
+  "summary": "Frontend Engineer with 3+ years of experience building scalable web and mobile applications using React, Vue, and modern UI frameworks. Focused on performance, component design, and delivering clean, user-centered interfaces.",
+  "proficiencies": {
+    "Languages & Frameworks": [
+      "TypeScript",
+      "JavaScript (ES6+)",
+      "React.js",
+      "Next.js",
+      "Vue.js",
+      "Tailwind CSS",
+      "HTML5"
+    ],
+    "State Management": ["Redux", "Zustand", "React Query"],
+    "Design Systems & Tools": [
+      "Figma",
+      "Storybook",
+      "Component Libraries",
+      "Design Tokens"
+    ],
+    "Testing": ["Jest", "React Testing Library", "Playwright (learning)"],
+    "Performance & SEO": [
+      "Lazy loading",
+      "SSR",
+      "SSG",
+      "Code splitting",
+      "Metadata optimization"
+    ],
+    "CI/CD & DevOps": [
+      "GitHub Actions",
+      "Jenkins",
+      "Docker",
+      "ESLint",
+      "Prettier",
+      "Husky"
+    ],
+    "Other Tools": ["Prismic CMS", "Notion", "Git", "Yarn", "VS Code"]
+  },
+  "experience": [
+    {
+      "title": "Frontend Engineer (Volunteer)",
+      "company": "Bank Green, UK",
+      "date": "Feb 2025 – Present",
+      "details": [
+        "Developed reusable and responsive UI components with Vue.js.",
+        "Improved web performance through SSR, SSG, and caching strategies.",
+        "Integrated Prismic CMS to enable no-code content updates for non-dev teams."
+      ]
+    },
+    {
+      "title": "Full-Stack Developer",
+      "company": "DSE00, HK",
+      "date": "Jan 2025 – Present",
+      "details": [
+        "Built and maintained 30+ frontend pages with Vue.js and React, serving over 40M+ visits.",
+        "Reduced loading time by 40% through performance tuning (CDN, caching, bundling).",
+        "Improved SEO rankings with structured metadata and best practices.",
+        "Enhanced UI consistency with Figma-based component design and TypeScript support.",
+        "Wrote unit tests with Jest and React Testing Library to ensure component reliability.",
+        "Automated linting, testing, and deployment workflows using GitHub Actions.",
+        "Improved code quality with ESLint, Prettier, Husky, and clear documentation."
+      ]
+    },
+    {
+      "title": "Frontend Developer (Freelance)",
+      "company": "Sampras (HK) Limited",
+      "date": "Aug 2023 – Dec 2024",
+      "details": [
+        "Delivered 10+ pixel-perfect frontend projects using Next.js and Tailwind CSS.",
+        "Implemented JWT-based auth flows and responsive UI for secure sessions.",
+        "Integrated backend APIs with clean component structure."
+      ]
+    },
+    {
+      "title": "Analyst Programmer",
+      "company": "Hospital Authority, HK",
+      "date": "Jul 2022 – Aug 2023",
+      "details": [
+        "Built medical-facing web interfaces using React.js.",
+        "Designed accessible UI in compliance with AAA standards.",
+        "Visualized dashboards to track system health and usage."
+      ]
+    },
+    {
+      "title": "Tesco Colleague (Part-Time)",
+      "company": "Blackburn, UK",
+      "date": "May 2025 – Present",
+      "details": []
+    }
+  ],
+  "education": [
+    {
+      "name": "AWS Certified Solutions Architect – Associate",
+      "date": "Issued: Dec 2024"
+    },
+    {
+      "name": "BSc, Science – Hong Kong University of Science and Technology (HKUST)",
+      "date": "2014–2018"
+    }
+  ],
+  "projects": [
+    {
+      "name": "Land Application Portal",
+      "company": "Hong Kong Government",
+      "description": "Built a web-based portal for public land applications with secure form handling, responsive UI, and user flow optimization."
+    },
+    {
+      "name": "Clinical Management System",
+      "company": "Hospital Authority, HK",
+      "description": "Built patient-facing booking interfaces for 100+ clinics, focusing on accessibility and responsiveness."
+    },
+    {
+      "name": "Online AI Tutor",
+      "company": "DSE00",
+      "description": "Frontend lead for interactive education dashboard and mobile web app."
+    },
+    {
+      "name": "KDP eShop WebView",
+      "company": "New World Development",
+      "description": "EDeveloped performant web-based mobile interface for e-commerce experience."
+    }
+  ],
+  "additional_skills": [
+    "Component-based Architecture",
+    "Accessibility & UX Best Practices",
+    "Frontend Performance Optimization",
+    "Collaboration & Cross-Team Communication"
+  ],
+  "languages": ["English", "Cantonese", "Mandarin"]
+}
