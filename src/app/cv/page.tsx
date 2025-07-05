@@ -1,7 +1,7 @@
 'use client';
 import { useSearchParams } from 'next/navigation';
 
-import { useEffect, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 
 import classNames from 'classnames';
 
@@ -14,7 +14,7 @@ import WillCV from './_data/will.json';
 
 import { useStore } from '@/providers/StoreProvider';
 
-export default () => {
+const F = () => {
   const [CvDataText, setCvDataText] = useState<string | null>(null);
   const [parsedData, setParsedData] = useState<any | null>(null);
   const { readOnly, setError } = useStore();
@@ -62,3 +62,9 @@ export default () => {
     </div>
   );
 };
+
+export default () => (
+  <Suspense>
+    <F />
+  </Suspense>
+);
