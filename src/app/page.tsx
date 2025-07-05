@@ -1,30 +1,18 @@
-'use client';
-import { useState } from 'react';
+import Link from 'next/link';
 
-import ActionPanel from './_components/ActionPanel';
-import CV from './_components/CV';
-import CvData from './_components/data.json';
-import Editor from './_components/Editor';
-
-export default function Home() {
-  const [CvDataText, setCvDataText] = useState(JSON.stringify(CvData, null, 2));
-
-  // Safe JSON parse with fallback
-  const safeJsonParse = <T,>(text: string, fallback: T): T => {
-    try {
-      return JSON.parse(text);
-    } catch {
-      return fallback;
-    }
-  };
-
-  const parsedData = safeJsonParse(CvDataText, CvData); // fallback to original if invalid
-
+export default () => {
   return (
-    <div className='flex items-stretch h-screen overflow-hidden'>
-      <CV data={parsedData} />
-      <Editor jsonText={CvDataText} setCvDataText={setCvDataText} />
-      <ActionPanel />
+    <div className='flex items-center justify-center min-h-screen gap-20'>
+      <Link href={'/cv?templateId=1'}>
+        <div className='w-80 h-96 bg-white rounded-xl' />
+      </Link>
+      <Link href={'/cv?templateId=2'}>
+        <div className='w-80 h-96 bg-white rounded-xl overflow-hidden'>
+          <div className='bg-[#9d936a] w-28 h-full'>
+            <div className='bg-[#3c4e66] w-full h-32' />
+          </div>
+        </div>
+      </Link>
     </div>
   );
-}
+};

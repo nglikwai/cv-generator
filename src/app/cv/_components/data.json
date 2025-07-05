@@ -19,28 +19,10 @@
       "HTML5"
     ],
     "State Management": ["Redux", "Zustand", "React Query"],
-    "Design Systems & Tools": [
-      "Figma",
-      "Storybook",
-      "Component Libraries",
-      "Design Tokens"
-    ],
+    "Design Systems & Tools": ["Figma", "Storybook", "Component Libraries", "Design Tokens"],
     "Testing": ["Jest", "React Testing Library", "Playwright (learning)"],
-    "Performance & SEO": [
-      "Lazy loading",
-      "SSR",
-      "SSG",
-      "Code splitting",
-      "Metadata optimization"
-    ],
-    "CI/CD & DevOps": [
-      "GitHub Actions",
-      "Jenkins",
-      "Docker",
-      "ESLint",
-      "Prettier",
-      "Husky"
-    ],
+    "Performance & SEO": ["Lazy loading", "SSR", "SSG", "Code splitting", "Metadata optimization"],
+    "CI/CD & DevOps": ["GitHub Actions", "Jenkins", "Docker", "ESLint", "Prettier", "Husky"],
     "Other Tools": ["Prismic CMS", "Notion", "Git", "Yarn", "VS Code"]
   },
   "experience": [

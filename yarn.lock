@@ -1897,6 +1897,11 @@ class-variance-authority@^0.7.1:
   dependencies:
     clsx "^2.1.1"
 
+classnames@^2.5.1:
+  version "2.5.1"
+  resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.5.1.tgz#ba774c614be0f016da105c858e7159eae8e7687b"
+  integrity sha512-saHYOzhIQs6wy2sVxTM6bUDsQO4F50V9RQ22qBpEdCW+I+/Wmke2HOl6lS6dTpdxVhb88/I6+Hs+438c3lfUow==
+
 cli-cursor@^5.0.0:
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/cli-cursor/-/cli-cursor-5.0.0.tgz#24a4831ecf5a6b01ddeb32fb71a4b2088b0dce38"
@@ -4378,10 +4383,10 @@ lru-cache@^5.1.1:
   dependencies:
     yallist "^3.0.2"
 
-lucide-react@^0.474.0:
-  version "0.474.0"
-  resolved "https://registry.yarnpkg.com/lucide-react/-/lucide-react-0.474.0.tgz#9fcaa96250fa2de0b3e2803d4ad744eaea572247"
-  integrity sha512-CmghgHkh0OJNmxGKWc0qfPJCYHASPMVSyGY8fj3xgk4v84ItqDg64JNKFZn5hC6E0vHi6gxnbCgwhyVB09wQtA==
+lucide-react@^0.525.0:
+  version "0.525.0"
+  resolved "https://registry.yarnpkg.com/lucide-react/-/lucide-react-0.525.0.tgz#5f7bcecd65e4f9b2b5b6b5d295e3376df032d5e3"
+  integrity sha512-Tm1txJ2OkymCGkvwoHt33Y2JpN5xucVq1slHcgE6Lk0WjDfjgKWor5CdVER8U6DvcfMwh4M8XxmpTiyzfmfDYQ==
 
 lz-string@^1.5.0:
   version "1.5.0"

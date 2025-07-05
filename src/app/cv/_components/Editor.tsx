@@ -1,10 +1,4 @@
-export default ({
-  jsonText,
-  setCvDataText,
-}: {
-  jsonText: string;
-  setCvDataText: (text: string) => void;
-}) => {
+export default ({ jsonText, setCvDataText }: { jsonText: string; setCvDataText: (text: string) => void }) => {
   return (
     <div className='grow bg-gray-900 border-l p-3'>
       <textarea
