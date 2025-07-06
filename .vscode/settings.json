@@ -6,17 +6,15 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit"
   },
-  "eslint.validate": [
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact"
-  ],
+  "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
   "eslint.options": {
     "overrideConfigFile": "eslint.config.mjs"
   },
   "prettier.configPath": ".prettierrc",
   "javascript.updateImportsOnFileMove.enabled": "never",
   "typescript.updateImportsOnFileMove.enabled": "never",
-  "terminal.integrated.scrollback": 10000
+  "terminal.integrated.scrollback": 10000,
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }

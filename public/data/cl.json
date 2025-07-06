@@ -1,0 +1,19 @@
+{
+  "applicant": {
+    "name": "Nick, Ng Lik Wai",
+    "title": "Frontend Engineer Applicant",
+    "phone": "+44 7784 896 298",
+    "email": "likwai0430@gmail.com"
+  },
+  "recipient": {
+    "to": "Hiring Manager",
+    "company": "Sainsbury’s"
+  },
+  "body": [
+    "I am writing to express my interest in the Frontend Engineer position at Sainsbury’s with a strong foundation in frontend development and a consistent track record across web and mobile platforms.",
+    "At DSE00, I led the frontend development of a progressive web, mobile, and desktop application for high school consultation platform, achieving over 40 million visits. Using ReactJS, React Native, and ElectronJS, I built responsive UI components and integrated RESTful APIs. I improved loading performance by 40% through AWS services (CloudFront, Redis, S3) and enhanced code maintainability using ESLint, Prettier, and GitHub Actions. This role also involved working with JWT-based authentication and contributing to infrastructure automation across development and deployment pipelines.",
+    "As a Freelance Programmer at Sampras (HK) Limited, I delivered over 10 client projects across e-commerce and business systems. I built scalable web apps with Next.js, VueJS, and JWT-based authentication, integrating with both custom and third-party APIs. I also worked with NestJS, MongoDB, NGINX, Apache, and Jenkins, gaining hands-on experience with full-stack CI/CD workflows and secure backend development for commercial platforms.",
+    "At the Hong Kong Hospital Authority, I developed ReactJS frontends and Java RESTful APIs for in-house medical applications used by over 7 million citizens and 100+ clinics. The role required strict attention to detail, especially when dealing with sensitive health records and system accessibility. I improved complex SQL query performance and ensured the frontend met AAA accessibility standards, which helped support inclusive and compliant design practices in the public sector.",
+    "I am excited about the opportunity to join Sainsbury’s. I believe my technical capabilities, especially in ReactJS, RESTful APIs, modern authentication, and frontend optimization, will allow me to contribute effectively to your projects."
+  ]
+}

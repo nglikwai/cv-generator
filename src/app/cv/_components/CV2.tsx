@@ -10,7 +10,11 @@ export default function CVWillDynamic({ data }: { data: CVData }) {
   if (!data) return null;
   return (
     <DataContext value={data}>
-      <div className={classNames('w-[794px] min-h-[1123px] text-black font-sans text-[11pt] flex items-stretch')}>
+      <div
+        className={classNames(
+          'w-[794px] h-[1123px] overflow-hidden text-black font-sans text-[11pt] flex items-stretch'
+        )}
+      >
         {/* Left */}
         <div className='bg-[#3c4e66] w-64 shrink-0 flex flex-col'>
           <div className='text-white py-5 px-8 text-center'>

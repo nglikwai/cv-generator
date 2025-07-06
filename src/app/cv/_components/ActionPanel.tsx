@@ -6,10 +6,17 @@ import Cookies from 'js-cookie';
 import { Bot, Printer, Save, User } from 'lucide-react';
 import { getPresignedUrl } from 'src/actions/s3Upload';
 
-import { PROMPT } from '@/constants/prompt';
 import { useStore } from '@/providers/StoreProvider';
 
-export default () => {
+export default ({
+  keyId,
+  prompt,
+  invalidateFuction,
+}: {
+  keyId: string;
+  prompt: string;
+  invalidateFuction: () => void;
+}) => {
   const { setReadOnly, readOnly, error, parsedData, loginOpen, setLoginOpen, user } = useStore();
 
   const onPrint = () => {
@@ -17,7 +24,7 @@ export default () => {
   };
 
   const handleUpload = async () => {
-    const key = `cv-generator/${user}.json`;
+    const key = `${keyId}/${user}.json`;
     const presignedUrl = await getPresignedUrl(key);
 
     const response = await fetch(presignedUrl, {
@@ -30,6 +37,7 @@ export default () => {
 
     if (response.ok) {
       alert('✅ Saved to Cloud!');
+      invalidateFuction();
     } else {
       alert('❌ Upload failed');
     }
@@ -41,7 +49,7 @@ export default () => {
   };
 
   const openAi = () => {
-    navigator.clipboard.writeText(PROMPT + JSON.stringify(parsedData, null, 2));
+    navigator.clipboard.writeText(prompt);
     window.open('https://chatgpt.com', '_blank');
   };
   return (
