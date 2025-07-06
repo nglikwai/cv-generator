@@ -1,0 +1,141 @@
+{
+  "name": "Lee Lee",
+  "preferredName": "Peter",
+  "contact": {
+    "email": "sophie@gmail.com",
+    "phone": "+44 7700 900123",
+    "github": "",
+    "website": "",
+    "linkedin": "Sophie Bennett"
+  },
+  "summary": "A reliable and organised administrative professional with strong experience in office coordination, document management, and team support. Known for multitasking efficiently in fast-paced environments, maintaining accurate records, and supporting senior staff with scheduling, procurement, and reporting duties. Adept with Microsoft Office Suite, internal systems, and ensuring smooth daily operations.",
+  "tools": [
+    {
+      "name": "Microsoft Excel",
+      "score": 95
+    },
+    {
+      "name": "Outlook & Teams",
+      "score": 90
+    },
+    {
+      "name": "SAP (ERP)",
+      "score": 75
+    },
+    {
+      "name": "Salesforce",
+      "score": 65
+    }
+  ],
+  "languages": [
+    {
+      "name": "English",
+      "score": 100
+    },
+    {
+      "name": "French",
+      "score": 60
+    }
+  ],
+  "experience": [
+    {
+      "title": "Administrative Assistant",
+      "company": "BrightEdge Consulting",
+      "date": "Jan 24 – Present",
+      "details": [
+        "Managed diaries and travel bookings for 4 senior managers, ensuring accuracy and timely arrangements.",
+        "Maintained internal files and procurement records, improving retrieval time by 30%.",
+        "Supported client onboarding process by preparing documentation, updating CRM systems, and coordinating meetings."
+      ]
+    },
+    {
+      "title": "Office Coordinator",
+      "company": "GreenPath Logistics Ltd",
+      "date": "Jul 21 – Dec 23",
+      "summary": "Admin & Operations Support Team",
+      "details": [
+        "Handled day-to-day office operations, including supplies ordering, equipment tracking, and visitor management.",
+        "Organised quarterly staff events and weekly internal meetings with full venue, catering, and AV support.",
+        "Collaborated with HR to update staff records, issue ID badges, and manage induction packs."
+      ]
+    },
+    {
+      "title": "Junior Project Administrator",
+      "company": "NovaBridge Group",
+      "date": "Aug 19 – Jun 21",
+      "summary": "Corporate Services Division",
+      "details": [
+        "Provided support to project managers across 3 concurrent client projects by tracking deliverables and updating project plans.",
+        "Created internal reports using Excel and PowerPoint for stakeholder meetings.",
+        "Ensured all project documentation was version-controlled and shared across teams via SharePoint."
+      ]
+    },
+    {
+      "title": "Junior Project Administrator",
+      "company": "NovaBridge Group",
+      "date": "Aug 19 – Jun 21",
+      "summary": "Corporate Services Division",
+      "details": [
+        "Provided support to project managers across 3 concurrent client projects by tracking deliverables and updating project plans.",
+        "Created internal reports using Excel and PowerPoint for stakeholder meetings.",
+        "Ensured all project documentation was version-controlled and shared across teams via SharePoint."
+      ]
+    },
+    {
+      "title": "Junior Project Administrator",
+      "company": "NovaBridge Group",
+      "date": "Aug 19 – Jun 21",
+      "summary": "Corporate Services Division",
+      "details": [
+        "Provided support to project managers across 3 concurrent client projects by tracking deliverables and updating project plans.",
+        "Created internal reports using Excel and PowerPoint for stakeholder meetings.",
+        "Ensured all project documentation was version-controlled and shared across teams via SharePoint."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "name": "BA (Hons) Business Administration",
+      "institution": "Manchester Metropolitan University",
+      "line1": "Second-Class Honours (Upper Division)",
+      "date": "2015 – 2018"
+    },
+    {
+      "name": "A-Level Qualifications",
+      "date": "2015",
+      "results": [
+        "Business-A-A-A",
+        "English-B-B-B",
+        "Psychology-B-C-C"
+      ]
+    }
+  ],
+  "projects": [],
+  "skills": [
+    {
+      "name": "Time Management",
+      "score": 5
+    },
+    {
+      "name": "Team Support",
+      "score": 4.5
+    },
+    {
+      "name": "Document Handling",
+      "score": 4.5
+    },
+    {
+      "name": "Procurement Coordination",
+      "score": 4
+    },
+    {
+      "name": "Communication",
+      "score": 4.5
+    }
+  ],
+  "qualifications": [
+    "Level 3 Certificate in Business Administration",
+    "First Aid at Work (valid to 2026)",
+    "Driving Licence – Full UK"
+  ]
+}

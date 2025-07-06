@@ -6,11 +6,20 @@ const StoreContext = createContext<null | {
   setReadOnly: (value: boolean) => void;
   error: boolean;
   setError: (value: boolean) => void;
+  parsedData: any | null;
+  setParsedData: (data: any | null) => void;
+  loginOpen: boolean;
+  setLoginOpen: (value: boolean) => void;
+  user: string | null;
+  setUser: (value: string | null) => void;
 }>(null);
 
 export const StoreProvider = ({ children }: { children: ReactNode }) => {
   const [readOnly, setReadOnly] = useState(false);
+  const [parsedData, setParsedData] = useState<any | null>(null);
+  const [loginOpen, setLoginOpen] = useState(false);
   const [error, setError] = useState(false);
+  const [user, setUser] = useState<string | null>(null);
   return (
     <StoreContext
       value={{
@@ -18,6 +27,12 @@ export const StoreProvider = ({ children }: { children: ReactNode }) => {
         setReadOnly,
         error,
         setError,
+        parsedData,
+        setParsedData,
+        loginOpen,
+        setLoginOpen,
+        user,
+        setUser,
       }}
     >
       {children}

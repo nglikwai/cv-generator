@@ -4,7 +4,7 @@ export default function CV({ data }: { data: any }) {
   if (!data) return null;
 
   return (
-    <div className='w-[794px] min-h-[2246px] p-10 bg-white text-black font-sans text-[12pt] leading-5 mx-auto '>
+    <div className='w-[794px] min-h-[2246px] p-12 bg-white text-black font-sans text-[12pt] leading-5 mx-auto '>
       <header className='mb-4 text-center border-b border-black pb-4'>
         <h1 className='text-xl font-bold'>{data?.name}</h1>
         <h2 className='text-md'>{data?.title}</h2>
@@ -13,10 +13,12 @@ export default function CV({ data }: { data: any }) {
             <span className='w-40 inline-block text-end pr-3'>{data?.contact?.email}</span>|
             <span className='w-36 inline-block text-start pl-3'>{data?.contact?.phone}</span>
           </p>
-          <p>
-            <span className='w-40 inline-block text-end pr-3'>{data?.contact?.github}</span>|
-            <span className='w-36 inline-block text-start pl-3'>{data?.contact?.website}</span>
-          </p>
+          {data?.contact?.github && data?.contact?.website && (
+            <p>
+              <span className='w-40 inline-block text-end pr-3'>{data?.contact?.github}</span>|
+              <span className='w-36 inline-block text-start pl-3'>{data?.contact?.website}</span>
+            </p>
+          )}
         </div>
         <br />
         <p className='text-sm'>{data?.summary}</p>
@@ -60,17 +62,21 @@ export default function CV({ data }: { data: any }) {
       {data?.education && (
         <section className='mb-6 break-before-page pt-10'>
           <h3 className='font-bold uppercase text-center py-4'>Education & Certifications</h3>
-          <ul>
+          <ul className='space-y-6'>
             {data?.education.map((edu: any, idx: number) => (
               <li key={idx}>
-                {edu.name} ({edu.date})
+                <p>
+                  <b>{edu.name}</b>, {edu.date}
+                </p>
+                <p>{edu.institution}</p>
+                <p>{edu.line1}</p>
               </li>
             ))}
           </ul>
         </section>
       )}
 
-      {data?.projects && (
+      {data?.projects.length > 0 && (
         <section className='mb-6'>
           <h3 className='font-bold uppercase text-center py-4'>Projects</h3>
           <ul className='text-sm'>
@@ -90,7 +96,7 @@ export default function CV({ data }: { data: any }) {
           <h3 className='font-bold uppercase text-center py-4'>Additional Skills</h3>
           <ul className='list-disc marker:text-[10px] pl-3'>
             {data?.additional_skills.map((skill: string, idx: number) => (
-              <li key={idx} className='pl-4'>
+              <li key={idx} className='pl-4 text-sm'>
                 {skill}
               </li>
             ))}
@@ -101,7 +107,8 @@ export default function CV({ data }: { data: any }) {
       {data?.languages && (
         <section>
           <h3 className='font-bold uppercase text-center py-4'>Languages</h3>
-          <p className='text-sm'>{data?.languages.join(', ')}</p>
+
+          <p className='text-sm'>{data.languages.map((l: any) => l.name).join(', ')}</p>
         </section>
       )}
     </div>

@@ -1,0 +1,145 @@
+{
+  "name": "Wai Chung LEE",
+  "preferredName": "Will",
+  "contact": {
+    "email": "wclee.will@gmail.com",
+    "phone": "+44 7784 899 243",
+    "github": "",
+    "website": "",
+    "linkedin": "Will WC LEE"
+  },
+  "summary": "A detail-oriented & dependable engineering professional with hands-on experience in ICS, PLC programming, & project coordination across the power & manufacturing sectors. Skilled in DCS/SCADA systems, C&I troubleshooting, & ICS upgrades that enhance plant performance & OT cybersecurity. Known for analytical thinking, root-cause analysis, & a proactive approach to solving technical challenges.",
+  "tools": [
+    {
+      "name": "Honeywell - ExperionPKS",
+      "score": 90
+    },
+    {
+      "name": "SIEMENS - TIA Portal / S7 ",
+      "score": 80
+    },
+    {
+      "name": "Rockwell - Studio 5000",
+      "score": 70
+    },
+    {
+      "name": "ABB - Symphony Plus",
+      "score": 50
+    }
+  ],
+  "languages": [
+    {
+      "name": "English",
+      "score": 98
+    },
+    {
+      "name": "Chinese - Cantonese",
+      "score": 100
+    },
+    {
+      "name": "Chinese - Mandarin",
+      "score": 95
+    }
+  ],
+  "experience": [
+    {
+      "title": "General Operative",
+      "company": "XPO Logistics (via Gap Personnel)",
+      "date": "Feb 25 – Present",
+      "details": [
+        "Supported operational efficiency by maintaining accurate inventory data for >2,000 items through SAP, ensuring data integrity across warehouse systems.",
+        "Performed root-cause analysis & documented findings on damaged goods to support process improvements in warehouse workflow."
+      ]
+    },
+    {
+      "title": "Engineer",
+      "company": "CLP Power HK Ltd",
+      "date": "Oct 21 – Aug 23",
+      "summary": "Project Management, Process Control & Cyber Security Department",
+      "details": [
+        "Led >20 PCCS projects in power stations, managing planning, budgeting & scheduling to ensure on-time delivery while meeting scope & company standards.",
+        "Delivered key initiatives enhancing OT cybersecurity & plant control performance in power stations, reducing cyber risk & protecting 7208MW of generation assets.",
+        "Monitored contractor performance & collaborated with O&M teams to achieve technical delivery, handover & integration into operations.",
+        "Supported procurement, technical tendering & justified project investments to senior management to secure funding & achieve the £8M annual CapEx target."
+      ]
+    },
+    {
+      "title": "System Engineer",
+      "company": "Control Automation Ltd",
+      "date": "Jul 21 – Oct 21",
+      "summary": "Project Engineering, Project Department",
+      "details": [
+        "Delivered ICS projects at 3 client sites, handling planning, tendering, PLC/SCADA upgrades & integration, system design, site survey & execution til handover.",
+        "Built strong client relationships through field-level involvement by identifying site operations & future EC&I project opportunities to support long-term collaboration.",
+        "Prepared key project documents, e.g. architecture diagrams, I/O lists, technical proposals, test plans, aligned with client specifications.",
+        "Coordinated system installation, FAT/SAT execution, end-user training & operational review."
+      ]
+    },
+    {
+      "title": "System Engineer Trainee",
+      "company": "Green Island Cement",
+      "date": "Oct 20 – Jul 21",
+      "summary": "System Custodian, System & Process Department",
+      "details": [
+        "Upgraded & maintained Honeywell DCS to support 84,000T clinker production annually, overseeing system performance by instrumentation calibration & process data analysis.",
+        "Troubleshot C&I faults & coordinated with O&M teams to uphold system reliability, while supporting production requests, e.g. GUI optimisation & logic modifications.",
+        "Developed control logic & conducted T&C activities for refurbishment projects, covering new plant infrastructure & E&M systems upgrades."
+      ]
+    },
+    {
+      "title": "Process Control Engineer",
+      "company": "Green Island Cement",
+      "date": "Oct 17 – Oct 20",
+      "summary": "Operation, Production Department",
+      "details": [
+        "Managed cement manufacturing operations in CCR using DCS, optimising manpower & system resources to enable timely decision-making & operational efficiency."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "name": "BEng (Hons) Chemical and Biomolecular Engineering",
+      "institution": "The Hong Kong University of Science and Technology - HKUST",
+      "line1": "Ranked #36 globally – QS World University Rankings (2017)",
+      "date": "2013 – 2017"
+    },
+    {
+      "name": "HK Diploma of Secondary Education Examination",
+      "date": "2013",
+      "results": [
+        "Maths-5*-A*",
+        "Maths (Calculus)-5-A",
+        "Chemistry-5-A",
+        "Physics-4-B"
+      ]
+    }
+  ],
+  "projects": [],
+  "skills": [
+    {
+      "name": "Project Planning",
+      "score": 4.5
+    },
+    {
+      "name": "Sense of Safety",
+      "score": 5
+    },
+    {
+      "name": "Communication",
+      "score": 4.5
+    },
+    {
+      "name": "Learning",
+      "score": 4
+    },
+    {
+      "name": "Procurement",
+      "score": 4
+    }
+  ],
+  "qualifications": [
+    "Member of Society of Operations Engineer",
+    "UK Full Driving Licence - Auto",
+    "Red Cross Standard First Aid Certificate"
+  ]
+}

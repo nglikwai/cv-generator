@@ -5,7 +5,8 @@
     "email": "likwai0430@gmail.com",
     "phone": "+44 7784 896 298",
     "github": "github.com/nglikwai",
-    "website": "nglikwai.com"
+    "website": "nglikwai.com",
+    "linkedin": ""
   },
   "summary": "Frontend Engineer with 3+ years of experience building scalable web and mobile applications using React, Vue, and modern UI frameworks. Focused on performance, component design, and delivering clean, user-centered interfaces.",
   "proficiencies": {
@@ -18,18 +19,51 @@
       "Tailwind CSS",
       "HTML5"
     ],
-    "State Management": ["Redux", "Zustand", "React Query"],
-    "Design Systems & Tools": ["Figma", "Storybook", "Component Libraries", "Design Tokens"],
-    "Testing": ["Jest", "React Testing Library", "Playwright (learning)"],
-    "Performance & SEO": ["Lazy loading", "SSR", "SSG", "Code splitting", "Metadata optimization"],
-    "CI/CD & DevOps": ["GitHub Actions", "Jenkins", "Docker", "ESLint", "Prettier", "Husky"],
-    "Other Tools": ["Prismic CMS", "Notion", "Git", "Yarn", "VS Code"]
+    "State Management": [
+      "Redux",
+      "Zustand",
+      "React Query"
+    ],
+    "Design Systems & Tools": [
+      "Figma",
+      "Storybook",
+      "Component Libraries",
+      "Design Tokens"
+    ],
+    "Testing": [
+      "Jest",
+      "React Testing Library",
+      "Playwright (learning)"
+    ],
+    "Performance & SEO": [
+      "Lazy loading",
+      "SSR",
+      "SSG",
+      "Code splitting",
+      "Metadata optimization"
+    ],
+    "CI/CD & DevOps": [
+      "GitHub Actions",
+      "Jenkins",
+      "Docker",
+      "ESLint",
+      "Prettier",
+      "Husky"
+    ],
+    "Other Tools": [
+      "Prismic CMS",
+      "Notion",
+      "Git",
+      "Yarn",
+      "VS Code"
+    ]
   },
   "experience": [
     {
       "title": "Frontend Engineer (Volunteer)",
       "company": "Bank Green, UK",
       "date": "Feb 2025 – Present",
+      "summary": "",
       "details": [
         "Developed reusable and responsive UI components with Vue.js.",
         "Improved web performance through SSR, SSG, and caching strategies.",
@@ -40,6 +74,7 @@
       "title": "Full-Stack Developer",
       "company": "DSE00, HK",
       "date": "Jan 2025 – Present",
+      "summary": "",
       "details": [
         "Built and maintained 30+ frontend pages with Vue.js and React, serving over 40M+ visits.",
         "Reduced loading time by 40% through performance tuning (CDN, caching, bundling).",
@@ -47,13 +82,14 @@
         "Enhanced UI consistency with Figma-based component design and TypeScript support.",
         "Wrote unit tests with Jest and React Testing Library to ensure component reliability.",
         "Automated linting, testing, and deployment workflows using GitHub Actions.",
-        "Improved code quality with ESLint, Prettier, Husky, and clear documentation."
+        "Improved code quality across the team by setting up ESLint, Prettier, and Husky pre-commit hooks, along with clear documentation and linting standards."
       ]
     },
     {
       "title": "Frontend Developer (Freelance)",
       "company": "Sampras (HK) Limited",
       "date": "Aug 2023 – Dec 2024",
+      "summary": "",
       "details": [
         "Delivered 10+ pixel-perfect frontend projects using Next.js and Tailwind CSS.",
         "Implemented JWT-based auth flows and responsive UI for secure sessions.",
@@ -64,6 +100,7 @@
       "title": "Analyst Programmer",
       "company": "Hospital Authority, HK",
       "date": "Jul 2022 – Aug 2023",
+      "summary": "",
       "details": [
         "Built medical-facing web interfaces using React.js.",
         "Designed accessible UI in compliance with AAA standards.",
@@ -74,17 +111,24 @@
       "title": "Tesco Colleague (Part-Time)",
       "company": "Blackburn, UK",
       "date": "May 2025 – Present",
+      "summary": "",
       "details": []
     }
   ],
   "education": [
     {
       "name": "AWS Certified Solutions Architect – Associate",
-      "date": "Issued: Dec 2024"
+      "institution": "",
+      "line1": "",
+      "date": "Issued: Dec 2024",
+      "results": []
     },
     {
-      "name": "BSc, Science – Hong Kong University of Science and Technology (HKUST)",
-      "date": "2014–2018"
+      "name": "BSc, Science",
+      "institution": "The Hong Kong University of Science and Technology (HKUST)",
+      "line1": "(QS Global Ranking #30 in 2018)",
+      "date": "2014–2018",
+      "results": []
     }
   ],
   "projects": [
@@ -115,5 +159,19 @@
     "Frontend Performance Optimization",
     "Collaboration & Cross-Team Communication"
   ],
-  "languages": ["English", "Cantonese", "Mandarin"]
+  "languages": [
+    {
+      "name": "English",
+      "score": 0
+    },
+    {
+      "name": "Cantonese",
+      "score": 0
+    },
+    {
+      "name": "Mandarin",
+      "score": 0
+    }
+  ],
+  "qualifications": []
 }

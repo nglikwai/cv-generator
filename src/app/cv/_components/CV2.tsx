@@ -26,7 +26,7 @@ export default function CVWillDynamic({ data }: { data: CVData }) {
         </div>
 
         {/* Right */}
-        <div className='bg-white py-5 px-8 grid gap-4 text-[12px] leading-[13px] pb-0'>
+        <div className='bg-white py-5 px-8 grid gap-4 text-[11.5px] leading-[13px] pb-0'>
           <Profile />
           <div className='mx-20 bg-[#9d936a] h-[2px]' />
           <Experience />
@@ -185,7 +185,7 @@ const Profile = () => {
   if (!data) return null;
   return (
     <section>
-      <h2 className='text-base font-black mb-2 uppercase text-[#282a2d]'>PROFILE</h2>
+      <h2 className='text-base font-black mb-2 uppercase text-[#3c4e66]'>PROFILE</h2>
       <p>{data?.summary}</p>
     </section>
   );
@@ -206,8 +206,9 @@ const Experience = () => {
               <span className='text-[#3c4e66] text-xs'>{job.company}</span>
               <span className='float-right text-gray-500 text-xs'>{job.date}</span>
             </p>
-            {job.summary ? <div className='text-xs text-gray-400 mb-1'>{job.summary}</div> : null}
-            <ul className='list-none space-y-1'>
+
+            <div className='text-xs text-gray-400 mb-2'>{job?.summary}</div>
+            <ul className='list-none space-y-[9px]'>
               {job.details.map((line, i) => (
                 <li key={i} className='flex gap-2'>
                   <span>-</span>
@@ -246,11 +247,11 @@ const Education = () => {
             </div>
             {edu.results && edu.results.length > 0 && (
               <ul className='text-xs text-gray-500 mt-1 italic'>
-                <div className='w-80 flex gap-10'>
+                <div className='w-92 flex gap-10'>
                   <span className='w-24'>Subject</span>
                   <span className='w-10'>HKDSE</span>
                   <span>
-                    <b>GCSE</b> Equivalent
+                    <b>UK A-Level</b> Equivalent
                   </span>
                 </div>
                 {edu.results.map((result, i) => (

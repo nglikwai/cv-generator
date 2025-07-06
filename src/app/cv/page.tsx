@@ -4,20 +4,17 @@ import { useSearchParams } from 'next/navigation';
 import { Suspense, useEffect, useState } from 'react';
 
 import classNames from 'classnames';
+import defaultData from 'public/data/default.json';
 
-import ActionPanel from './_components/ActionPanel';
 import CV from './_components/CV';
 import CV2 from './_components/CV2';
-import CvData from './_components/data.json';
 import Editor from './_components/Editor';
-import WillCV from './_data/will.json';
 
 import { useStore } from '@/providers/StoreProvider';
 
 const F = () => {
   const [CvDataText, setCvDataText] = useState<string | null>(null);
-  const [parsedData, setParsedData] = useState<any | null>(null);
-  const { readOnly, setError } = useStore();
+  const { readOnly, setError, parsedData, setParsedData, user } = useStore();
 
   const searchParams = useSearchParams();
   const templateId = searchParams.get('templateId');
@@ -25,25 +22,39 @@ const F = () => {
   // Re-parse JSON and set error state whenever CvDataText changes
 
   useEffect(() => {
-    if (!CvDataText || !CvData) return;
+    if (!CvDataText) return;
     try {
       const parsed = JSON.parse(CvDataText);
       setParsedData(parsed);
       setError(false); // clear error if valid
     } catch {
-      setParsedData(CvData); // fallback
+      setParsedData(defaultData); // fallback
       setError(true); // mark error
     }
   }, [CvDataText, setError]);
 
-  useEffect(() => {
-    if (!CvData) return;
-    if (templateId === '1') {
-      setCvDataText(JSON.stringify(CvData, null, 2));
-    } else if (templateId === '2') {
-      setCvDataText(JSON.stringify(WillCV, null, 2));
+  const loadCvData = async () => {
+    try {
+      const response = await fetch(`https://likwai.s3.us-east-1.amazonaws.com/cv-generator/${user}.json`);
+      if (!response.ok) {
+        setParsedData(defaultData); // fallback to default data if fetch fails
+        setCvDataText(JSON.stringify(defaultData, null, 2)); // pretty print JSON
+        return;
+      }
+
+      const data = await response.json();
+      setCvDataText(JSON.stringify(data, null, 2)); // pretty print JSON
+    } catch (error) {
+      console.error('Error loading CV data:', error);
+      setParsedData(defaultData);
+      setError(true);
     }
-  }, [templateId]);
+  };
+
+  useEffect(() => {
+    if (!user) return; // don't load data if user is not set
+    loadCvData();
+  }, [user]);
 
   if (!templateId || !parsedData || !CvDataText) return null;
 
@@ -54,11 +65,14 @@ const F = () => {
         'justify-center': readOnly,
       })}
     >
-      <div className='overflow-y-scroll h-screen'>
+      <div
+        className={classNames({
+          'overflow-y-scroll h-screen': !readOnly,
+        })}
+      >
         {templateId === '1' ? <CV data={parsedData} /> : <CV2 data={parsedData} />}
       </div>
       {!readOnly && <Editor jsonText={CvDataText} setCvDataText={setCvDataText} />}
-      <ActionPanel />
     </div>
   );
 };

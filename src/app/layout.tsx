@@ -1,7 +1,9 @@
-import { Geist, Geist_Mono, Lato, Source_Sans_3 } from 'next/font/google';
+import { Geist, Geist_Mono, Lato } from 'next/font/google';
 
 import './globals.css';
 import type { Metadata } from 'next';
+
+import GlobalLayout from './cv/_components/GlobalLayout';
 
 import ReactQueryClientProvider from '@/providers/ReactQueryClientProvider';
 import { StoreProvider } from '@/providers/StoreProvider';
@@ -11,7 +13,7 @@ const geistSans = Geist({
   subsets: ['latin'],
 });
 
-const lata = Lato({
+const lato = Lato({
   variable: '--font-lato',
   subsets: ['latin'],
   weight: ['400', '700'],
@@ -19,11 +21,6 @@ const lata = Lato({
 
 const geistMono = Geist_Mono({
   variable: '--font-geist-mono',
-  subsets: ['latin'],
-});
-
-const sourceSans = Source_Sans_3({
-  variable: '--font-source-sans',
   subsets: ['latin'],
 });
 
@@ -39,11 +36,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body
-        className={`${sourceSans.variable} ${lata.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={` ${lato.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}>
         <ReactQueryClientProvider>
-          <StoreProvider>{children}</StoreProvider>
+          <StoreProvider>
+            <GlobalLayout>{children}</GlobalLayout>
+          </StoreProvider>
         </ReactQueryClientProvider>
       </body>
     </html>
