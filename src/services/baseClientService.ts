@@ -63,7 +63,7 @@ export const BaseClientService = ({ baseURL }: BaseClientServiceInterface) => {
         message: R.propOr(error.message, 'message', data),
       };
 
-      console.error(
+      console.warn(
         `{error on api calling | url: ${message.url} | status: ${message.status} | code: ${message.code} | message: ${message.message}}`
       );
 

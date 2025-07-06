@@ -1,36 +1,145 @@
 'use client';
 import Link from 'next/link';
 
+import { useEffect, useState } from 'react';
+
+import { Bot, ClipboardList } from 'lucide-react';
+
+import CL from './cl/_components/CL';
+import CV from './cv/_components/CV';
+import CV2 from './cv/_components/CV2';
+
+import { getCvClPROMPT } from '@/constants/prompt';
+import { useCL } from '@/hooks/useCL';
+import { useCV } from '@/hooks/useCV';
 import { useStore } from '@/providers/StoreProvider';
 
 export default () => {
-  const { user } = useStore();
+  const { user, setParseClData, setParsedCvData, parseClData, parsedCvData } = useStore();
+  const { CvData } = useCV();
+  const { ClData } = useCL();
+
+  const [url, setUrl] = useState('');
+  const [jsonText, setJsonText] = useState('');
+
+  const openAi = () => {
+    if (!url) {
+      alert('Please enter a job link');
+      return;
+    }
+    navigator.clipboard.writeText(getCvClPROMPT(url, JSON.stringify(CvData, null, 2)));
+    window.open('https://chatgpt.com', '_blank');
+  };
+
+  const readText = async () => {
+    const text = await navigator.clipboard.readText();
+    setUrl(text);
+  };
+
+  useEffect(() => {
+    if (!jsonText) return;
+    try {
+      const parsed = JSON.parse(jsonText);
+      const { cv, coverLetter } = parsed;
+      setParseClData(coverLetter);
+      setParsedCvData(cv);
+    } catch (error) {
+      console.error('Invalid JSON format:', error);
+    }
+  }, [jsonText]);
+
+  useEffect(() => {
+    if (ClData && CvData) {
+      setJsonText(
+        JSON.stringify(
+          {
+            cv: CvData,
+            coverLetter: ClData,
+          },
+          null,
+          2
+        )
+      );
+    }
+  }, [ClData, CvData]);
   return (
     <div className='min-h-screen py-20'>
-      <div className='py-20 text-center text-3xl justify-center flex items-center'>
-        {user && <span className='bg-white/50 py-5 px-8 rounded-xl'> {user?.toUpperCase()}'s CV</span>}
-      </div>
-      <div className='flex items-center justify-center gap-20'>
-        <Link href={'/cv?templateId=1'}>
-          <div className='w-80 h-96 bg-white rounded-xl' />
-        </Link>
-        <Link href={'/cv?templateId=2'}>
-          <div className='w-80 h-96 bg-white rounded-xl overflow-hidden'>
-            <div className='bg-[#9d936a] w-28 h-full'>
-              <div className='bg-[#3c4e66] w-full h-32' />
-            </div>
-          </div>
-        </Link>
-      </div>
-      <div className='py-20 text-center text-3xl justify-center flex items-center'>
-        {user && <span className='bg-white/50 py-5 px-8 rounded-xl'> {user?.toUpperCase()}'s Cover Letter</span>}
+      {/* url input */}
+      <div className='py-20 flex justify-center'>
+        <div className='text-lg bg-white rounded-2xl overflow-hidden items-center flex gap-2'>
+          <input
+            type='text'
+            value={url}
+            onChange={e => setUrl(e.target.value)}
+            placeholder='job link'
+            className='py-3 px-5 outline-none text-lg w-80'
+          />
+          <button onClick={readText} className='hover:bg-[#3c4e66] hover:text-white p-3 rounded-xl'>
+            <ClipboardList />
+          </button>
+          <button onClick={openAi} className='hover:bg-[#3c4e66] hover:text-white p-3 rounded-xl'>
+            <Bot />
+          </button>
+        </div>
       </div>
 
-      <div className='flex items-center justify-center gap-20'>
-        <Link href={'/cl?templateId=1'}>
-          <div className='w-80 h-96 bg-white rounded-xl' />
-        </Link>
+      {/* json input */}
+      <div className='flex justify-center'>
+        <div className='bg-gray-900 rounded-xl flex items-start'>
+          <textarea
+            name=''
+            id=''
+            className='bg-transparent w-[700px] p-4 outline-none text-white font-mono text-sm border-none resize-none'
+            placeholder='json paste here'
+            rows={20}
+            value={jsonText}
+            onChange={e => setJsonText(e.target.value)}
+          />
+          <button className='text-white p-3'>
+            <ClipboardList />
+          </button>
+        </div>
       </div>
+
+      {/* CV and CL display */}
+      {parseClData && parsedCvData && (
+        <>
+          {/* CV display */}
+          <div className='py-20 text-center text-3xl justify-center flex items-center'>
+            {user && <span className='bg-white/50 py-5 px-8 rounded-xl'> {user?.toUpperCase()}'s CV</span>}
+          </div>
+          <div className='flex items-center justify-center gap-20'>
+            <Link href={'/cv?templateId=1'}>
+              <div className='w-[318px] h-[450px] overflow-hidden rounded-lg'>
+                <div className='w-[794px] h-[1123px] rounded-xl overflow-hidden scale-[0.4] origin-top-left'>
+                  <CV data={parsedCvData} />
+                </div>
+              </div>
+            </Link>
+            <Link href={'/cv?templateId=2'}>
+              <div className='w-[318px] h-[450px] rounded-lg overflow-hidden'>
+                <div className='scale-[0.4] origin-top-left'>
+                  <CV2 data={parsedCvData} />
+                </div>
+              </div>
+            </Link>
+          </div>
+
+          {/* Cover Letter display */}
+          <div className='py-20 text-center text-3xl justify-center flex items-center'>
+            {user && <span className='bg-white/50 py-5 px-8 rounded-xl'> {user?.toUpperCase()}'s Cover Letter</span>}
+          </div>
+          <div className='flex items-center justify-center gap-20'>
+            <Link href={'/cl?templateId=1'}>
+              <div className='w-[318px] h-[450px] rounded-lg overflow-hidden'>
+                <div className='scale-[0.4] origin-top-left'>
+                  <CL data={parseClData} />
+                </div>
+              </div>
+            </Link>
+          </div>
+        </>
+      )}
     </div>
   );
 };

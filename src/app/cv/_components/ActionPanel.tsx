@@ -12,12 +12,14 @@ export default ({
   keyId,
   prompt,
   invalidateFuction,
+  parsedData,
 }: {
   keyId: string;
   prompt: string;
   invalidateFuction: () => void;
+  parsedData: any;
 }) => {
-  const { setReadOnly, readOnly, error, parsedData, loginOpen, setLoginOpen, user } = useStore();
+  const { setReadOnly, readOnly, error, loginOpen, setLoginOpen, user } = useStore();
 
   const onPrint = () => {
     setReadOnly(!readOnly);

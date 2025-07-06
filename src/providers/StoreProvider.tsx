@@ -6,8 +6,10 @@ const StoreContext = createContext<null | {
   setReadOnly: (value: boolean) => void;
   error: boolean;
   setError: (value: boolean) => void;
-  parsedData: any | null;
-  setParsedData: (data: any | null) => void;
+  parsedCvData: any | null;
+  setParsedCvData: (data: any | null) => void;
+  parseClData: any | null;
+  setParseClData: (data: any | null) => void;
   loginOpen: boolean;
   setLoginOpen: (value: boolean) => void;
   user: string | null;
@@ -16,7 +18,8 @@ const StoreContext = createContext<null | {
 
 export const StoreProvider = ({ children }: { children: ReactNode }) => {
   const [readOnly, setReadOnly] = useState(false);
-  const [parsedData, setParsedData] = useState<any | null>(null);
+  const [parsedCvData, setParsedCvData] = useState<any | null>(null);
+  const [parseClData, setParseClData] = useState<any | null>(null);
   const [loginOpen, setLoginOpen] = useState(false);
   const [error, setError] = useState(false);
   const [user, setUser] = useState<string | null>(null);
@@ -27,8 +30,10 @@ export const StoreProvider = ({ children }: { children: ReactNode }) => {
         setReadOnly,
         error,
         setError,
-        parsedData,
-        setParsedData,
+        parsedCvData,
+        setParsedCvData,
+        parseClData,
+        setParseClData,
         loginOpen,
         setLoginOpen,
         user,

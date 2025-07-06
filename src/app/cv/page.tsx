@@ -17,21 +17,17 @@ import { useStore } from '@/providers/StoreProvider';
 
 const F = () => {
   const [CvDataText, setCvDataText] = useState<string | null>(null);
-  const { readOnly, setError, parsedData, setParsedData, user } = useStore();
-  const { CvData, invalidateQuery } = useCV();
+  const { readOnly, setError, parsedCvData, setParsedCvData, user } = useStore();
+  const { invalidateQuery } = useCV();
 
   const searchParams = useSearchParams();
   const templateId = searchParams.get('templateId');
 
   const loadData = () => {
-    if (CvData) {
-      setCvDataText(JSON.stringify(CvData, null, 2));
+    if (parsedCvData) {
+      setCvDataText(JSON.stringify(parsedCvData, null, 2));
     }
   };
-
-  useEffect(() => {
-    loadData();
-  }, [CvData]);
 
   useEffect(() => {
     if (!user) return; // don't load data if user is not set
@@ -42,10 +38,10 @@ const F = () => {
     if (!CvDataText) return;
     try {
       const parsed = JSON.parse(CvDataText);
-      setParsedData(parsed);
+      setParsedCvData(parsed);
       setError(false); // clear error if valid
     } catch {
-      setParsedData(defaultData); // fallback
+      setParsedCvData(defaultData); // fallback
       setError(true); // mark error
     }
   }, [CvDataText, setError]);
@@ -53,13 +49,13 @@ const F = () => {
   useEffect(() => {
     return () => {
       // Reset the CV data when the component unmounts
-      setParsedData(defaultData);
+      setParsedCvData(defaultData);
       setCvDataText(null);
       setError(false);
     };
   }, []);
 
-  if (!templateId || !parsedData || !CvDataText) return null;
+  if (!templateId || !parsedCvData || !CvDataText) return null;
 
   return (
     <>
@@ -74,14 +70,15 @@ const F = () => {
             'overflow-y-scroll h-screen': !readOnly,
           })}
         >
-          {templateId === '1' ? <CV data={parsedData} /> : <CV2 data={parsedData} />}
+          {templateId === '1' ? <CV data={parsedCvData} /> : <CV2 data={parsedCvData} />}
         </div>
         {!readOnly && <Editor jsonText={CvDataText} setText={setCvDataText} />}
       </div>
       <ActionPanel
         keyId={'cl-generator'}
-        prompt={CV_PROMPT + JSON.stringify(parsedData, null, 2)}
+        prompt={CV_PROMPT + JSON.stringify(parsedCvData, null, 2)}
         invalidateFuction={invalidateQuery}
+        parsedData={parsedCvData}
       />
     </>
   );

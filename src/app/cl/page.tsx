@@ -17,13 +17,13 @@ import { useStore } from '@/providers/StoreProvider';
 
 export default () => {
   const [ClDataText, setClDataText] = useState<string | null>(null);
-  const { readOnly, setError, parsedData, setParsedData, user } = useStore();
-  const { ClData, invalidateQuery } = useCL();
+  const { readOnly, setError, parseClData, setParseClData, user } = useStore();
   const { CvData } = useCV();
+  const { invalidateQuery } = useCL();
 
   const loadData = () => {
-    if (ClData) {
-      setClDataText(JSON.stringify(ClData, null, 2));
+    if (parseClData) {
+      setClDataText(JSON.stringify(parseClData, null, 2));
     }
   };
 
@@ -33,17 +33,13 @@ export default () => {
   }, [user]);
 
   useEffect(() => {
-    loadData();
-  }, [ClData]);
-
-  useEffect(() => {
     if (!ClDataText) return;
     try {
       const parsed = JSON.parse(ClDataText);
-      setParsedData(parsed);
+      setParseClData(parsed);
       setError(false); // clear error if valid
     } catch {
-      setParsedData(defaultData); // fallback
+      setParseClData(defaultData); // fallback
       setError(true); // mark error
     }
   }, [ClDataText, setError]);
@@ -51,13 +47,13 @@ export default () => {
   useEffect(() => {
     return () => {
       // Reset the CL data when the component unmounts
-      setParsedData(defaultData);
+      setParseClData(defaultData);
       setClDataText(null);
       setError(false);
     };
   }, []);
 
-  if (!parsedData || !ClDataText) return null;
+  if (!parseClData || !ClDataText) return null;
 
   return (
     <>
@@ -72,7 +68,7 @@ export default () => {
             'overflow-y-scroll h-screen': !readOnly,
           })}
         >
-          <CL />
+          <CL data={parseClData} />
         </div>
         {!readOnly && <Editor jsonText={ClDataText} setText={setClDataText} />}
       </div>
@@ -80,6 +76,7 @@ export default () => {
         keyId={'cl-generator'}
         prompt={CL_PROMPT + JSON.stringify(CvData, null, 2)}
         invalidateFuction={invalidateQuery}
+        parsedData={parseClData}
       />
     </>
   );

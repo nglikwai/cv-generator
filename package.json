@@ -6,7 +6,6 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "postinstall": "husky",
     "lint": "next lint",
     "test": "jest --verbose --no-watch --coverage --passWithNoTests"
   },

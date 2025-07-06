@@ -1,10 +1,8 @@
 // components/CoverLetter.tsx
 'use client';
-import React from 'react';
 
-import data from 'public/data/cl.json'; // adjust path as needed
-
-export default function CoverLetter() {
+export default function CoverLetter({ data }: { data: any }) {
+  if (!data) return null;
   const { applicant, recipient, body } = data;
 
   return (
@@ -42,7 +40,7 @@ export default function CoverLetter() {
 
         <main className='space-y-4 leading-relaxed'>
           <p className='mb-8'>Dear {recipient.to},</p>
-          {body.map((para, idx) => (
+          {body.map((para: string, idx: number) => (
             <p key={idx} className='text-justify'>
               {para}
             </p>

@@ -6,7 +6,7 @@ import { Info, Linkedin, Mail, Phone, Triangle } from 'lucide-react';
 const DataContext = createContext<CVData | null>(null);
 const useData = () => useContext(DataContext);
 
-export default function CVWillDynamic({ data }: { data: CVData }) {
+export default function CVWillDynamic({ data }: { data: any }) {
   if (!data) return null;
   return (
     <DataContext value={data}>
