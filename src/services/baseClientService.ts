@@ -1,10 +1,10 @@
 import axios, { AxiosRequestConfig } from 'axios';
-import { stringify } from 'qs';
+import qs from 'qs';
 import * as R from 'ramda';
 
 import pkg from '../../package.json';
 
-const paramsSerializer = R.partialRight(stringify, [{ arrayFormat: 'comma' }]);
+const paramsSerializer = R.partialRight(qs.stringify, [{ arrayFormat: 'comma' }]);
 
 interface BaseClientServiceInterface {
   baseURL: string;
