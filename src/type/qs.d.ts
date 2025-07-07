@@ -1,4 +1,4 @@
 declare module 'qs' {
-  const qs: any;
+  import * as qs from '@types/qs';
   export = qs;
 }
