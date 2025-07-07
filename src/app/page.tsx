@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import { Bot, ClipboardList } from 'lucide-react';
 
 import CL from './cl/_components/CL';
+import ActionPanel from './cv/_components/ActionPanel';
 import CV from './cv/_components/CV';
 import CV2 from './cv/_components/CV2';
 
@@ -140,6 +141,7 @@ export default () => {
           </div>
         </>
       )}
+      <ActionPanel />
     </div>
   );
 };

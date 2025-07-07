@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from 'react';
 
-import Cookies from 'js-cookie';
 import { Check, X } from 'lucide-react';
+import { getUser, login } from 'src/actions/auth';
 
 import { useStore } from '@/providers/StoreProvider';
 
@@ -13,16 +13,20 @@ export default () => {
     username: '',
   });
 
-  useEffect(() => {
-    const username = Cookies.get('username');
+  const initLogin = async () => {
+    const username = await getUser();
     if (username) {
       setCredentials({ username });
       setUser(username);
     }
+  };
+
+  useEffect(() => {
+    initLogin();
   }, []);
 
-  const toLogin = () => {
-    Cookies.set('username', credentials.username, { expires: 365 });
+  const toLogin = async () => {
+    await login(credentials.username);
     setLoginOpen(false);
     setUser(credentials.username);
   };
