@@ -13,26 +13,31 @@ import Editor from './_components/Editor';
 
 import { CV_PROMPT } from '@/constants/prompt';
 import { useCV } from '@/hooks/useCV';
+import useSearchable from '@/hooks/useSearchable';
 import { useStore } from '@/providers/StoreProvider';
 
 const F = () => {
   const [CvDataText, setCvDataText] = useState<string | null>(null);
   const { readOnly, setError, parsedCvData, setParsedCvData, user } = useStore();
-  const { invalidateQuery } = useCV();
+  const { invalidateQuery, CvData } = useCV();
+
+  const { components, textareaRef } = useSearchable();
 
   const searchParams = useSearchParams();
   const templateId = searchParams.get('templateId');
 
-  const loadData = () => {
-    if (parsedCvData) {
-      setCvDataText(JSON.stringify(parsedCvData, null, 2));
-    }
-  };
-
+  // life cycle hooks
   useEffect(() => {
     if (!user) return; // don't load data if user is not set
     loadData();
   }, [user]);
+
+  useEffect(() => {
+    if (parsedCvData) return;
+    if (CvData) {
+      setCvDataText(JSON.stringify(CvData, null, 2));
+    }
+  }, [CvData]);
 
   useEffect(() => {
     if (!CvDataText) return;
@@ -46,16 +51,15 @@ const F = () => {
     }
   }, [CvDataText, setError]);
 
-  useEffect(() => {
-    return () => {
-      // Reset the CV data when the component unmounts
-      setParsedCvData(defaultData);
-      setCvDataText(null);
-      setError(false);
-    };
-  }, []);
+  // methods
 
-  if (!templateId || !parsedCvData || !CvDataText) return null;
+  const loadData = () => {
+    if (parsedCvData) {
+      setCvDataText(JSON.stringify(parsedCvData, null, 2));
+    }
+  };
+
+  if (!templateId || !CvDataText) return null;
 
   return (
     <>
@@ -70,15 +74,16 @@ const F = () => {
             'overflow-y-scroll h-screen': !readOnly,
           })}
         >
-          {templateId === '1' ? <CV data={parsedCvData} /> : <CV2 data={parsedCvData} />}
+          {templateId === '1' ? <CV data={parsedCvData} components={components} /> : <CV2 data={parsedCvData} />}
         </div>
-        {!readOnly && <Editor jsonText={CvDataText} setText={setCvDataText} />}
+        {!readOnly && <Editor jsonText={CvDataText} setText={setCvDataText} textareaRef={textareaRef} />}
       </div>
       <ActionPanel
-        keyId={'cl-generator'}
+        keyId={'cv-generator'}
         prompt={CV_PROMPT + JSON.stringify(parsedCvData, null, 2)}
         invalidateFuction={invalidateQuery}
         parsedData={parsedCvData}
+        setTextFunction={setCvDataText}
       />
     </>
   );

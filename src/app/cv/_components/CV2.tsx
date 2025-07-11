@@ -3,11 +3,19 @@ import React, { createContext, useContext } from 'react';
 import classNames from 'classnames';
 import { Info, Linkedin, Mail, Phone, Triangle } from 'lucide-react';
 
+import { useStore } from '@/providers/StoreProvider';
+
 const DataContext = createContext<CVData | null>(null);
 const useData = () => useContext(DataContext);
 
 export default function CVWillDynamic({ data }: { data: any }) {
+  const { readOnly } = useStore();
+
   if (!data) return null;
+
+  {
+    !readOnly && <div className='w-[794px] left-0 top-[1123px] border-t absolute z-20 border-dotted border-gray-400' />;
+  }
   return (
     <DataContext value={data}>
       <div
@@ -173,10 +181,10 @@ const Qualifications = () => {
       <h2 className='text-base font-black mb-2 uppercase'>Qualifications</h2>
 
       <div className='grid gap-3'>
-        {data?.qualifications.map(name => (
-          <div key={name} className='flex items-center gap-2'>
+        {data?.certification?.map(cert => (
+          <div key={cert.name} className='flex items-center gap-2'>
             <span>-</span>
-            <span>{name}</span>
+            <span>{cert.name}</span>
           </div>
         ))}
       </div>
@@ -213,7 +221,7 @@ const Experience = () => {
 
             <div className='text-xs text-gray-400 mb-2'>{job?.summary}</div>
             <ul className='list-none space-y-[9px]'>
-              {job.details.map((line, i) => (
+              {job.details?.map((line, i) => (
                 <li key={i} className='flex gap-2'>
                   <span>-</span>
                   <span>{line}</span>
@@ -303,13 +311,7 @@ interface CVData {
     summary?: string; // Optional field for a brief summary of the role
     details: string[];
   }[];
-  education: {
-    name: string;
-    date: string;
-    institution?: string; // Optional field for institution name
-    line1?: string; // Optional field for additional information
-    results?: string[]; // Optional field for exam results or grades
-  }[];
+  education: RecordType[];
   projects: {
     name: string;
     description: string;
@@ -318,5 +320,13 @@ interface CVData {
   languages: { name: string; score: number }[];
   tools: { name: string; score: number }[];
   skills: { name: string; score: number }[];
-  qualifications: string[];
+  certification: RecordType[];
 }
+
+type RecordType = {
+  name: string;
+  date: string;
+  institution?: string; // Optional field for institution name
+  line1?: string; // Optional field for additional information
+  results?: string[]; // Optional field for exam results or grades
+};

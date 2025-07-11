@@ -6,8 +6,8 @@ export default function CoverLetter({ data }: { data: any }) {
   const { applicant, recipient, body } = data;
 
   return (
-    <div className='w-[794px] h-[1123px] overflow-hidden p-12 bg-white text-black font-sans text-[10pt] leading-5 mx-auto '>
-      <header className='mb-10'>
+    <div className='w-[794px] h-[1123px] overflow-hidden px-16 py-20 bg-white text-black font-sans text-[10pt] leading-5 mx-auto '>
+      <header className='mb-8'>
         <h1 className='text-3xl font-black mb-8'>
           <span>{applicant.name}</span>
           <span className='w-5 h-5 bg-black inline-block float-end' />
@@ -23,18 +23,14 @@ export default function CoverLetter({ data }: { data: any }) {
         </p>
       </header>
 
-      <div className='flex gap-10'>
-        <div className='w-40 shrink-0 flex flex-col gap-20'>
-          <div className=''>
-            <p>TO </p>
-            <b className='mt-8 block mb-1'>{recipient.to}</b>
-            <p className='text-gray-500'>{recipient.company}</p>
+      <div className='flex flex-col gap-10'>
+        <div className='flex '>
+          <div className='w-36'>
+            <b>TO</b>
           </div>
-
-          <div className='space-y-1'>
-            <p>FROM </p>
-            <b className='pt-8 block mb-1'>{applicant.name}</b>
-            <p className='text-gray-500'>{applicant.title}</p>
+          <div className=''>
+            <b className='block mb-1'>{recipient.to}</b>
+            <p className='text-gray-500'>{recipient.company}</p>
           </div>
         </div>
 

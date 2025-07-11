@@ -91,3 +91,7 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+.hover-highlight {
+  @apply hover:bg-blue-50;
+}

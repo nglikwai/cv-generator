@@ -1,23 +1,25 @@
 {
   "name": "LIK WAI NG (Nick)",
-  "title": "Front-End Engineer",
+  "title": "Frontend React Developer",
   "contact": {
     "email": "likwai0430@gmail.com",
     "phone": "+44 7784 896 298",
-    "github": "github.com/nglikwai",
-    "website": "nglikwai.com",
-    "linkedin": ""
+    "github": "https://github.com/nglikwai",
+    "website": "https://nglikwai.com",
+    "linkedin": "",
+    "location": "London, UK"
   },
-  "summary": "Frontend Engineer with 3+ years of experience building scalable web and mobile applications using React, Vue, and modern UI frameworks. Focused on performance, component design, and delivering clean, user-centered interfaces.",
+  "summary": "Frontend React Developer 3 years of Frontend React Developer experienced in building web, mobile and desktop applications with React.js, Node.js and electron.js. Skilled in producing clean, well-documented, and collaborative team-friendly code. Key achievement: developed 25+ NodeJS applications.",
   "proficiencies": {
     "Languages & Frameworks": [
       "TypeScript",
-      "JavaScript (ES6+)",
+      "JavaScript",
       "React.js",
       "Next.js",
       "Vue.js",
-      "Tailwind CSS",
-      "HTML5"
+      "HTML5",
+      "CSS3",
+      "Java"
     ],
     "State Management": [
       "Redux",
@@ -26,108 +28,112 @@
     ],
     "Design Systems & Tools": [
       "Figma",
-      "Storybook",
-      "Component Libraries",
-      "Design Tokens"
+      "Tailwind CSS",
+      "SCSS",
+      "ESLint",
+      "Prettier"
     ],
     "Testing": [
       "Jest",
-      "React Testing Library",
-      "Playwright (learning)"
+      "React Testing Library"
     ],
     "Performance & SEO": [
-      "Lazy loading",
       "SSR",
       "SSG",
+      "Lazy loading",
+      "Caching",
       "Code splitting",
-      "Metadata optimization"
+      "CloudFront",
+      "SEO metadata"
     ],
     "CI/CD & DevOps": [
       "GitHub Actions",
-      "Jenkins",
+      "Yarn",
       "Docker",
-      "ESLint",
-      "Prettier",
-      "Husky"
+      "Jenkins",
+      "NGINX",
+      "Apache",
+      "AWS CLI"
     ],
     "Other Tools": [
-      "Prismic CMS",
+      "VS Code",
+      "GIT",
       "Notion",
-      "Git",
-      "Yarn",
-      "VS Code"
+      "Maven",
+      "Prismic CMS"
     ]
   },
   "experience": [
     {
       "title": "Frontend Engineer (Volunteer)",
-      "company": "Bank Green, UK",
-      "date": "Feb 2025 – Present",
+      "company": "Bank Green (UK)",
+      "date": "02/2025 - Present",
       "summary": "",
       "details": [
-        "Developed reusable and responsive UI components with Vue.js.",
-        "Improved web performance through SSR, SSG, and caching strategies.",
-        "Integrated Prismic CMS to enable no-code content updates for non-dev teams."
+        "Developed responsive UI/UX such as search pages and bank rating views using VueJS, implementing reusable components.",
+        "Improved web performance by implementing server-side rendering (SSR), static site generation (SGR), lazy loading, caching, and code splitting.",
+        "Integrated Prismic CMS to manage dynamic content without code changes."
       ]
     },
     {
-      "title": "Full-Stack Developer",
-      "company": "DSE00, HK",
-      "date": "Jan 2025 – Present",
-      "summary": "",
+      "title": "Full-stack Developer",
+      "company": "DSE00 (HK)",
+      "date": "01/2025 - Present",
+      "summary": "Achievement:   Moved up ranking to #9 in education website of HK",
       "details": [
-        "Built and maintained 30+ frontend pages with Vue.js and React, serving over 40M+ visits.",
-        "Reduced loading time by 40% through performance tuning (CDN, caching, bundling).",
-        "Improved SEO rankings with structured metadata and best practices.",
-        "Enhanced UI consistency with Figma-based component design and TypeScript support.",
-        "Wrote unit tests with Jest and React Testing Library to ensure component reliability.",
-        "Automated linting, testing, and deployment workflows using GitHub Actions.",
-        "Improved code quality across the team by setting up ESLint, Prettier, and Husky pre-commit hooks, along with clear documentation and linting standards."
+        "Developed populate public exam progressive web app, mobile app and desktop app by React, React Native, with 40M+ visit.",
+        "Reduced loading time by 40% and enhancing user experience by implementing various AWS solutions, including CloudFront, S3, and Redis.",
+        "Optimized SEO by 40% through improved metadata, structured content.",
+        "Integrated Google Cloud API to service (e.g map API, Recaptcha...).",
+        "Improved code quality by implementing ESLint, Prettier, and Husky for automated checks, and writing clear documentation to support team adoption.",
+        "Established infrastructure with 10+ AWS services and automated deployment by GitHub Action and Yarn.",
+        "Created 30+ VueJS UI/UX pages and components design with Figma.",
+        "Improved application robustness with TypeScript.",
+        "Tested React components with Jest and React Testing Library.",
+        "Documented technical specifications and meeting notes in Notion."
       ]
     },
     {
-      "title": "Frontend Developer (Freelance)",
+      "title": "Freelance Programmer",
       "company": "Sampras (HK) Limited",
-      "date": "Aug 2023 – Dec 2024",
-      "summary": "",
+      "date": "08/2023 - 12/2024",
+      "summary": "Achievement:   Delivered 10+ commercial projects with pixel perfect standard",
       "details": [
-        "Delivered 10+ pixel-perfect frontend projects using Next.js and Tailwind CSS.",
-        "Implemented JWT-based auth flows and responsive UI for secure sessions.",
-        "Integrated backend APIs with clean component structure."
+        "Developed, and maintained an cross-browser e-commerce platform with 50k+ daily active users with NextJS, VueJS.",
+        "Utilized modern authentication techniques including JWT (JSON Web Token) for secure user sessions and access control.",
+        "Designed backend, database by modern technology (e.g NestJS, Laravel & MongoDB, Flux, Redux).",
+        "Deployed applications via NGINX, Apache, and Jenkins CI/CD pipelines.",
+        "Implemented internationalisation (i18n) support"
       ]
     },
     {
       "title": "Analyst Programmer",
-      "company": "Hospital Authority, HK",
-      "date": "Jul 2022 – Aug 2023",
-      "summary": "",
+      "company": "Hong Kong Hospital Authority",
+      "date": "07/2022 - 08/2023",
+      "summary": "Achievement:   Developed Child Health Service Booking System",
       "details": [
-        "Built medical-facing web interfaces using React.js.",
-        "Designed accessible UI in compliance with AAA standards.",
-        "Visualized dashboards to track system health and usage."
+        "Developed ReactJS frontend and Java-based RESTful API backend medical applications, serving medical staffs from 100+ health centers & 7M+ citizens.",
+        "Maintained shared services, including clinic reports, and improved complex SQL query performance by 10%.",
+        "Developed websites adhering to AAA accessibility standards.",
+        "Monitored system health status in dashboard integrated with Elastic."
       ]
-    },
-    {
-      "title": "Tesco Colleague (Part-Time)",
-      "company": "Blackburn, UK",
-      "date": "May 2025 – Present",
-      "summary": "",
-      "details": []
     }
   ],
   "education": [
     {
-      "name": "AWS Certified Solutions Architect – Associate",
-      "institution": "",
-      "line1": "",
-      "date": "Issued: Dec 2024",
+      "name": "Bachelor of Science",
+      "institution": "Hong Kong University of Science and Technology",
+      "line1": "Ranked #30 globally (QS World University Rankings 2018)",
+      "date": "06/2014 - 08/2018",
       "results": []
-    },
+    }
+  ],
+  "certification": [
     {
-      "name": "BSc, Science",
-      "institution": "The Hong Kong University of Science and Technology (HKUST)",
-      "line1": "(QS Global Ranking #30 in 2018)",
-      "date": "2014–2018",
+      "name": "AWS Certified Solutions Architect - Associate",
+      "institution": "Amazon Web Services",
+      "line1": "",
+      "date": "12/2024",
       "results": []
     }
   ],
@@ -150,28 +156,67 @@
     {
       "name": "KDP eShop WebView",
       "company": "New World Development",
-      "description": "EDeveloped performant web-based mobile interface for e-commerce experience."
+      "description": "Developed performant web-based mobile interface for e-commerce experience."
     }
   ],
   "additional_skills": [
-    "Component-based Architecture",
-    "Accessibility & UX Best Practices",
-    "Frontend Performance Optimization",
-    "Collaboration & Cross-Team Communication"
+    "AI Integration",
+    "Quick Learner",
+    "Attention to detail",
+    "Collaboration",
+    "Data Structure and algorithm",
+    "Critical Thinking"
+  ],
+  "skills": [
+    {
+      "name": "ReactJS",
+      "score": 90
+    },
+    {
+      "name": "VueJS",
+      "score": 85
+    },
+    {
+      "name": "NextJS",
+      "score": 85
+    },
+    {
+      "name": "TypeScript",
+      "score": 90
+    },
+    {
+      "name": "NodeJS",
+      "score": 85
+    },
+    {
+      "name": "NestJS",
+      "score": 80
+    },
+    {
+      "name": "Java",
+      "score": 75
+    },
+    {
+      "name": "Docker",
+      "score": 70
+    },
+    {
+      "name": "AWS",
+      "score": 80
+    }
   ],
   "languages": [
     {
       "name": "English",
-      "score": 0
+      "score": 90
     },
     {
       "name": "Cantonese",
-      "score": 0
+      "score": 100
     },
     {
       "name": "Mandarin",
-      "score": 0
+      "score": 80
     }
-  ],
-  "qualifications": []
+  ]
 }

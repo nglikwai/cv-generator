@@ -1,12 +1,13 @@
 {
   "name": "Wai Chung LEE",
   "preferredName": "Will",
+  "title": "Engineer",
   "contact": {
     "email": "wclee.will@gmail.com",
     "phone": "+44 7784 899 243",
     "github": "",
-    "website": "",
-    "linkedin": "Will WC LEE"
+    "linkedin": "Will WC LEE",
+    "location": "London, UK"
   },
   "summary": "A detail-oriented & dependable engineering professional with hands-on experience in ICS, PLC programming, & project coordination across the power & manufacturing sectors. Skilled in DCS/SCADA systems, C&I troubleshooting, & ICS upgrades that enhance plant performance & OT cybersecurity. Known for analytical thinking, root-cause analysis, & a proactive approach to solving technical challenges.",
   "tools": [
@@ -106,7 +107,12 @@
     {
       "name": "HK Diploma of Secondary Education Examination",
       "date": "2013",
-      "results": ["Maths-5*-A*", "Maths (Calculus)-5-A", "Chemistry-5-A", "Physics-4-B"]
+      "results": [
+        "Maths-5*-A*",
+        "Maths (Calculus)-5-A",
+        "Chemistry-5-A",
+        "Physics-4-B"
+      ]
     }
   ],
   "projects": [],

@@ -4,7 +4,7 @@ import { cookies } from 'next/headers';
 const login = async (username: string) => {
   const cookiesStore = await cookies();
   cookiesStore.set('username', username, {
-    expires: new Date(Date.now() + 60 * 60 * 24 * 30), // 30 days
+    expires: new Date(Date.now() + 60 * 60 * 24 * 30 * 1000), // 30 days
   });
 };
 

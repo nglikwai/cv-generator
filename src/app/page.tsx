@@ -23,20 +23,7 @@ export default () => {
   const [url, setUrl] = useState('');
   const [jsonText, setJsonText] = useState('');
 
-  const openAi = () => {
-    if (!url) {
-      alert('Please enter a job link');
-      return;
-    }
-    navigator.clipboard.writeText(getCvClPROMPT(url, JSON.stringify(CvData, null, 2)));
-    window.open('https://chatgpt.com', '_blank');
-  };
-
-  const readText = async () => {
-    const text = await navigator.clipboard.readText();
-    setUrl(text);
-  };
-
+  // life cycle hooks
   useEffect(() => {
     if (!jsonText) return;
     try {
@@ -50,7 +37,18 @@ export default () => {
   }, [jsonText]);
 
   useEffect(() => {
-    if (ClData && CvData) {
+    if (parseClData && parsedCvData) {
+      setJsonText(
+        JSON.stringify(
+          {
+            cv: parsedCvData,
+            coverLetter: parseClData,
+          },
+          null,
+          2
+        )
+      );
+    } else if (ClData && CvData) {
       setJsonText(
         JSON.stringify(
           {
@@ -62,43 +60,63 @@ export default () => {
         )
       );
     }
-  }, [ClData, CvData]);
+  }, [ClData, CvData, parseClData, parsedCvData]);
+
+  // methods
+  const openAi = () => {
+    if (!url) {
+      alert('Please enter a job description');
+      return;
+    }
+    navigator.clipboard.writeText(getCvClPROMPT(url, JSON.stringify(CvData, null, 2)));
+    window.open('https://chatgpt.com', '_blank');
+  };
+
+  const readText = async () => {
+    const text = await navigator.clipboard.readText();
+    setUrl(text);
+  };
+
   return (
     <div className='min-h-screen py-20'>
       {/* url input */}
       <div className='py-20 flex justify-center'>
-        <div className='text-lg bg-white rounded-2xl overflow-hidden items-center flex gap-2'>
-          <input
-            type='text'
+        <div className='text-lg bg-white rounded-2xl overflow-hidden flex flex-col w-[750px]'>
+          <div className='flex p-2 gap-2'>
+            <button onClick={readText} className='hover:bg-[#3c4e66] hover:text-white p-3 rounded-xl'>
+              <ClipboardList />
+            </button>
+            <button onClick={openAi} className='hover:bg-[#3c4e66] hover:text-white p-3 rounded-xl'>
+              <Bot />
+            </button>
+          </div>
+          <textarea
             value={url}
             onChange={e => setUrl(e.target.value)}
-            placeholder='job link'
-            className='py-3 px-5 outline-none text-lg w-80'
+            placeholder='job description'
+            className='px-5 outline-none text-lg'
+            rows={5}
           />
-          <button onClick={readText} className='hover:bg-[#3c4e66] hover:text-white p-3 rounded-xl'>
-            <ClipboardList />
-          </button>
-          <button onClick={openAi} className='hover:bg-[#3c4e66] hover:text-white p-3 rounded-xl'>
-            <Bot />
-          </button>
         </div>
       </div>
 
       {/* json input */}
       <div className='flex justify-center'>
-        <div className='bg-gray-900 rounded-xl flex items-start'>
+        <div className='bg-gray-900 rounded-xl flex flex-col overflow-hidden w-[750px]'>
+          <div>
+            <button className='text-white p-3 hover:bg-gray-700 rounded-xl'>
+              <ClipboardList />
+            </button>
+          </div>
           <textarea
             name=''
             id=''
-            className='bg-transparent w-[700px] p-4 outline-none text-white font-mono text-sm border-none resize-none'
+            className='bg-transparent p-4 outline-none text-white font-mono text-sm border-none resize-none'
             placeholder='json paste here'
             rows={20}
             value={jsonText}
             onChange={e => setJsonText(e.target.value)}
           />
-          <button className='text-white p-3'>
-            <ClipboardList />
-          </button>
         </div>
       </div>
 

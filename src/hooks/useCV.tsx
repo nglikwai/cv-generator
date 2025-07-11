@@ -23,9 +23,18 @@ export const useCV = () => {
     enabled: !!user,
   });
 
+  const { data: CvDefaultData } = useQuery({
+    queryKey: [QUERY_KEYS.CV_DEFAULT],
+
+    queryFn: () => {
+      return services.getCV(('default-' + user) as string);
+    },
+    enabled: !!user,
+  });
+
   const invalidateQuery = () => {
     queryClient.invalidateQueries({ queryKey: [QUERY_KEYS.CV] });
   };
 
-  return { CvData, isError, invalidateQuery, isLoading };
+  return { CvData, isError, invalidateQuery, isLoading, CvDefaultData };
 };

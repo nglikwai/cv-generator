@@ -13,13 +13,17 @@ import CL from './_components/CL';
 import { CL_PROMPT } from '@/constants/prompt';
 import { useCL } from '@/hooks/useCL';
 import { useCV } from '@/hooks/useCV';
+import useSearchable from '@/hooks/useSearchable';
 import { useStore } from '@/providers/StoreProvider';
 
 export default () => {
   const [ClDataText, setClDataText] = useState<string | null>(null);
   const { readOnly, setError, parseClData, setParseClData, user } = useStore();
   const { CvData } = useCV();
-  const { invalidateQuery } = useCL();
+
+  const { textareaRef } = useSearchable();
+
+  const { invalidateQuery, ClData } = useCL();
 
   const loadData = () => {
     if (parseClData) {
@@ -31,6 +35,12 @@ export default () => {
     if (!user) return; // don't load data if user is not set
     loadData();
   }, [user]);
+
+  useEffect(() => {
+    if (ClData) {
+      setClDataText(JSON.stringify(ClData, null, 2));
+    }
+  }, [ClData]);
 
   useEffect(() => {
     if (!ClDataText) return;
@@ -53,7 +63,7 @@ export default () => {
     };
   }, []);
 
-  if (!parseClData || !ClDataText) return null;
+  if (!ClDataText) return null;
 
   return (
     <>
@@ -70,13 +80,14 @@ export default () => {
         >
           <CL data={parseClData} />
         </div>
-        {!readOnly && <Editor jsonText={ClDataText} setText={setClDataText} />}
+        {!readOnly && <Editor jsonText={ClDataText} setText={setClDataText} textareaRef={textareaRef} />}
       </div>
       <ActionPanel
         keyId={'cl-generator'}
         prompt={CL_PROMPT + JSON.stringify(CvData, null, 2)}
         invalidateFuction={invalidateQuery}
         parsedData={parseClData}
+        setTextFunction={setClDataText}
       />
     </>
   );
